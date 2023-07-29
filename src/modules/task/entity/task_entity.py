@@ -1,8 +1,8 @@
 from enum import Enum as PyEnum
 from sqlalchemy import Enum, Column, ForeignKey, Integer, String, Text, Boolean
 from sqlalchemy.orm import relationship
-from config.db.db_config import Base
-from config.db.mixins import Timestamp
+from src.config.db.db_config import Base
+from src.config.db.mixins import Timestamp
 
 class Priority(PyEnum):
     HIGH = 'high'

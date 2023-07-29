@@ -6,12 +6,12 @@ from pathlib import Path
 # Add the project root directory to the Python path
 sys.path.append(str(Path(__file__).resolve().parent))
 
-from modules.user.user_router import router as user_router
-from modules.task.task_router import router as task_router
+from src.modules.user.user_router import router as user_router
+from src.modules.task.task_router import router as task_router
 
-from config.db.db_config import engine, Base
-from modules.task.entity.task_entity import Task
-from modules.user.entity.user_entity import User
+from src.config.db.db_config import engine, Base
+from src.modules.task.entity.task_entity import Task
+from src.modules.user.entity.user_entity import User
 
 Base.metadata.create_all(bind=engine)
 

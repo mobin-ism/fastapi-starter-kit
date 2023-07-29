@@ -9,6 +9,13 @@ sys.path.append(str(Path(__file__).resolve().parent))
 from modules.user.user_router import router as user_router
 from modules.task.task_router import router as task_router
 
+from config.db.db_config import engine, Base
+from modules.task.entity.task_entity import Task
+from modules.user.entity.user_entity import User
+
+Base.metadata.create_all(bind=engine)
+
+
 app = FastAPI(
     title="Starter Kit Of FastAPI",
     description="This is just a bare minimum code base for getting started with FastAPI.",

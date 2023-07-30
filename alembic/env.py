@@ -7,7 +7,7 @@ from alembic import context
 
 from src.config.db.db_config import Base
 from src.modules.task.entity.task_entity import Task
-from src.modules.user.entity.user_entity import User
+from src.modules.user.schema.user_entity import User
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

@@ -1,6 +1,15 @@
 from fastapi import APIRouter, Path
-
+from fastapi import Depends, HTTPException
+from src.config.db.db_config import async_get_db 
+from src.modules.user.dto.create_user_dto import CreateUserDto
+from sqlalchemy.ext.asyncio import AsyncSession
+from src.modules.user.user_service import UserService
+from src.modules.user.schema.user_schema import UserResponse
 router = APIRouter()
+
+@router.post('/')
+async def createUser(createUserDto: CreateUserDto, db: AsyncSession = Depends(async_get_db)):
+    return await UserService.create_user(db=db, createUserDto=createUserDto)
 
 @router.get('/')
 def getAllUsers():

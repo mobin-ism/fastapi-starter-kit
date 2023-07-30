@@ -1,8 +1,6 @@
 from pydantic import BaseModel
 from typing import Optional
+from src.modules.user.schema.user_schema import UserBase
 
-class CreateUserDto(BaseModel):
-    name: str
-    bio: Optional[str] = ''
-    age: int
-    isActive: bool
+class CreateUserDto(UserBase):
+    ...

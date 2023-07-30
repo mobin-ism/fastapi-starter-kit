@@ -17,4 +17,4 @@ class Task(Timestamp, Base):
     descripttion = Column(Text, nullable=True)
     priority = Column(Enum(Priority), default=Priority.LOW)
     assignedTo = Column(Integer, ForeignKey("users.id"), nullable=False)
-    assignee = relationship("User", back_populates='tasks')
+    # assignee = relationship("User", back_populates='tasks')

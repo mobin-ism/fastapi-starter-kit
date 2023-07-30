@@ -11,7 +11,7 @@ from src.modules.task.task_router import router as task_router
 
 from src.config.db.db_config import engine, Base
 from src.modules.task.entity.task_entity import Task
-from src.modules.user.entity.user_entity import User
+from src.modules.user.schema.user_entity import User
 
 Base.metadata.create_all(bind=engine)
 
